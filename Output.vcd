@@ -1,0 +1,729 @@
+$date
+	Mon Mar 18 22:41:25 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module UART_TX_TB $end
+$var wire 1 ! busy_TB $end
+$var wire 1 " S_DATA_TB $end
+$var real 1 # CLK_PERIOD $end
+$var parameter 32 $ P_DATA_WIDTH_TB $end
+$var parameter 8 % data_1 $end
+$var parameter 8 & data_2 $end
+$var reg 1 ' CLK_TB $end
+$var reg 1 ( Data_Valid_TB $end
+$var reg 1 ) PAR_EN_TB $end
+$var reg 1 * PAR_TYP_TB $end
+$var reg 8 + P_DATA_TB [7:0] $end
+$var reg 1 , RST_TB $end
+$scope module DUT $end
+$var wire 1 ' CLK $end
+$var wire 1 ( Data_Valid $end
+$var wire 1 ) PAR_EN $end
+$var wire 1 * PAR_TYP $end
+$var wire 8 - P_DATA [7:0] $end
+$var wire 1 , RST $end
+$var wire 1 . stop_bit $end
+$var wire 1 / start_bit $end
+$var wire 1 0 ser_en $end
+$var wire 1 1 ser_done $end
+$var wire 1 2 ser_data $end
+$var wire 1 3 par_bit $end
+$var wire 2 4 mux_sel [1:0] $end
+$var wire 1 ! busy $end
+$var wire 1 " S_DATA $end
+$var parameter 32 5 P_DATA_WIDTH $end
+$scope module U0_FSM $end
+$var wire 1 ' CLK $end
+$var wire 1 ( Data_Valid $end
+$var wire 1 ) PAR_EN $end
+$var wire 1 , RST $end
+$var wire 1 1 ser_done $end
+$var parameter 5 6 DATA_STATE $end
+$var parameter 5 7 IDLE_STATE $end
+$var parameter 5 8 PARITY_STATE $end
+$var parameter 5 9 START_STATE $end
+$var parameter 5 : STOP_STATE $end
+$var reg 1 ! busy $end
+$var reg 5 ; current_state [4:0] $end
+$var reg 2 < mux_sel [1:0] $end
+$var reg 5 = next_state [4:0] $end
+$var reg 1 0 ser_en $end
+$var reg 1 / start_bit $end
+$var reg 1 . stop_bit $end
+$upscope $end
+$scope module U0_MUX $end
+$var wire 2 > mux_sel [1:0] $end
+$var wire 1 / start_bit $end
+$var wire 1 . stop_bit $end
+$var wire 1 2 ser_data $end
+$var wire 1 3 par_bit $end
+$var reg 1 " S_DATA $end
+$upscope $end
+$scope module U0_Parity $end
+$var wire 1 ( Data_Valid $end
+$var wire 1 * PAR_TYP $end
+$var wire 8 ? P_DATA [7:0] $end
+$var parameter 32 @ IN_DATA_WIDTH $end
+$var reg 1 3 par_bit $end
+$upscope $end
+$scope module U0_serializer $end
+$var wire 1 ' CLK $end
+$var wire 1 ( Data_Valid $end
+$var wire 8 A P_DATA [7:0] $end
+$var wire 1 , RST $end
+$var wire 1 0 ser_en $end
+$var wire 1 B count_max $end
+$var parameter 32 C IN_DATA_WIDTH $end
+$var reg 4 D count_bits [3:0] $end
+$var reg 8 E input_store_comb [7:0] $end
+$var reg 1 2 ser_data $end
+$var reg 1 1 ser_done $end
+$upscope $end
+$upscope $end
+$scope task check_busy_signal $end
+$upscope $end
+$scope task check_serial_data $end
+$var reg 8 F p_data [7:0] $end
+$var integer 32 G count [31:0] $end
+$upscope $end
+$scope task initialize $end
+$upscope $end
+$scope task load_parallel_data $end
+$var reg 8 H p_data [7:0] $end
+$upscope $end
+$scope task parity_configuration $end
+$var reg 1 I parity_enable $end
+$var reg 1 J parity_type $end
+$upscope $end
+$scope task reset $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1000 C
+b1000 @
+b10000 :
+b10 9
+b1000 8
+b1 7
+b100 6
+b1000 5
+b1101011 &
+b1011010 %
+b1000 $
+r8.68 #
+$end
+#0
+$dumpvars
+1J
+0I
+bx H
+bx G
+bx F
+bx E
+bx D
+xB
+b0 A
+b0 ?
+b0 >
+b1 =
+b0 <
+bx ;
+b0 4
+x3
+x2
+x1
+00
+1/
+0.
+b0 -
+1,
+b0 +
+1*
+0)
+0(
+0'
+1"
+0!
+$end
+#4340
+01
+b1 ;
+1'
+#8680
+0B
+b0 D
+02
+b0 E
+0'
+0,
+#13020
+1'
+#17360
+b10 =
+13
+0'
+1(
+b1011010 H
+1,
+#21700
+0"
+b100 =
+1!
+0/
+b10 ;
+b1011010 E
+1'
+b1011010 +
+b1011010 -
+b1011010 ?
+b1011010 A
+#26040
+1!
+0/
+0'
+b1011010 F
+b0 +
+b0 -
+b0 ?
+b0 A
+0(
+#30380
+b1 4
+b1 <
+b1 >
+10
+1!
+1/
+b100 ;
+1'
+#34720
+0'
+b0 G
+#39060
+b1 D
+1'
+#43400
+0'
+b1 G
+#47740
+1"
+b10 D
+12
+1'
+#52080
+0'
+b10 G
+#56420
+0"
+b11 D
+02
+1'
+#60760
+0'
+b11 G
+#65100
+1"
+b100 D
+12
+1'
+#69440
+0'
+b100 G
+#73780
+b101 D
+1'
+#78120
+0'
+b101 G
+#82460
+0"
+b110 D
+02
+1'
+#86800
+0'
+b110 G
+#91140
+1"
+b111 D
+12
+1'
+#95480
+0'
+b111 G
+#99820
+0"
+1B
+b1000 D
+02
+1'
+#104160
+0'
+b1000 G
+#108500
+b10000 =
+b11 4
+b11 <
+b11 >
+1!
+00
+0B
+b0 D
+11
+1'
+#112840
+0'
+#117180
+1"
+b1 =
+1.
+b11 4
+b11 <
+b11 >
+1!
+01
+b10000 ;
+1'
+#121520
+b10 =
+b11 4
+b11 <
+b11 >
+1!
+1.
+0'
+1(
+b1101011 H
+#125860
+0"
+b100 =
+0/
+b0 4
+b0 <
+b0 >
+1!
+0.
+b10 ;
+b1101011 E
+03
+1'
+b1101011 +
+b1101011 -
+b1101011 ?
+b1101011 A
+#130200
+1!
+0/
+0'
+b1101011 F
+b0 +
+b0 -
+b0 ?
+b0 A
+0(
+#134540
+b1 4
+b1 <
+b1 >
+10
+1!
+1/
+b100 ;
+1'
+#138880
+0'
+b0 G
+#143220
+1"
+b1 D
+12
+1'
+#147560
+0'
+b1 G
+#151900
+b10 D
+1'
+#156240
+0'
+b10 G
+#160580
+0"
+b11 D
+02
+1'
+#164920
+0'
+b11 G
+#169260
+1"
+b100 D
+12
+1'
+#173600
+0'
+b100 G
+#177940
+0"
+b101 D
+02
+1'
+#182280
+0'
+b101 G
+#186620
+1"
+b110 D
+12
+1'
+#190960
+0'
+b110 G
+#195300
+b111 D
+1'
+#199640
+0'
+b111 G
+#203980
+0"
+1B
+b1000 D
+02
+1'
+#208320
+0'
+b1000 G
+#212660
+b10000 =
+b11 4
+b11 <
+b11 >
+1!
+00
+0B
+b0 D
+11
+1'
+#217000
+0'
+#221340
+1"
+b1 =
+1.
+b11 4
+b11 <
+b11 >
+1!
+01
+b10000 ;
+1'
+#225680
+13
+b10 =
+b11 4
+b11 <
+b11 >
+1!
+1.
+0'
+1(
+b1011010 H
+1)
+1I
+#230020
+0"
+b100 =
+0/
+b0 4
+b0 <
+b0 >
+1!
+0.
+b10 ;
+b1011010 E
+1'
+b1011010 +
+b1011010 -
+b1011010 ?
+b1011010 A
+#234360
+1!
+0/
+0'
+b1011010 F
+b0 +
+b0 -
+b0 ?
+b0 A
+0(
+#238700
+b1 4
+b1 <
+b1 >
+10
+1!
+1/
+b100 ;
+1'
+#243040
+0'
+b0 G
+#247380
+b1 D
+1'
+#251720
+0'
+b1 G
+#256060
+1"
+b10 D
+12
+1'
+#260400
+0'
+b10 G
+#264740
+0"
+b11 D
+02
+1'
+#269080
+0'
+b11 G
+#273420
+1"
+b100 D
+12
+1'
+#277760
+0'
+b100 G
+#282100
+b101 D
+1'
+#286440
+0'
+b101 G
+#290780
+0"
+b110 D
+02
+1'
+#295120
+0'
+b110 G
+#299460
+1"
+b111 D
+12
+1'
+#303800
+0'
+b111 G
+#308140
+0"
+1B
+b1000 D
+02
+1'
+#312480
+0'
+b1000 G
+#316820
+1"
+b1000 =
+b10 4
+b10 <
+b10 >
+1!
+00
+0B
+b0 D
+11
+1'
+#321160
+0'
+#325500
+b10000 =
+b10 4
+b10 <
+b10 >
+1!
+01
+b1000 ;
+1'
+#329840
+0'
+#334180
+b1 =
+1.
+b11 4
+b11 <
+b11 >
+1!
+b10000 ;
+1'
+#338520
+b10 =
+b11 4
+b11 <
+b11 >
+1!
+1.
+0'
+1(
+b1101011 H
+#342860
+0"
+b100 =
+0/
+b0 4
+b0 <
+b0 >
+1!
+0.
+b1101011 E
+b10 ;
+03
+1'
+b1101011 +
+b1101011 -
+b1101011 ?
+b1101011 A
+#347200
+1!
+0/
+0'
+b1101011 F
+b0 +
+b0 -
+b0 ?
+b0 A
+0(
+#351540
+b1 4
+b1 <
+b1 >
+10
+1!
+1/
+b100 ;
+1'
+#355880
+0'
+b0 G
+#360220
+1"
+b1 D
+12
+1'
+#364560
+0'
+b1 G
+#368900
+b10 D
+1'
+#373240
+0'
+b10 G
+#377580
+0"
+b11 D
+02
+1'
+#381920
+0'
+b11 G
+#386260
+1"
+b100 D
+12
+1'
+#390600
+0'
+b100 G
+#394940
+0"
+b101 D
+02
+1'
+#399280
+0'
+b101 G
+#403620
+1"
+b110 D
+12
+1'
+#407960
+0'
+b110 G
+#412300
+b111 D
+1'
+#416640
+0'
+b111 G
+#420980
+0"
+1B
+b1000 D
+02
+1'
+#425320
+0'
+b1000 G
+#429660
+b1000 =
+b10 4
+b10 <
+b10 >
+1!
+00
+0B
+b0 D
+11
+1'
+#434000
+0'
+#438340
+b10000 =
+b10 4
+b10 <
+b10 >
+1!
+b1000 ;
+01
+1'
+#442680
+0'
+#447020
+1"
+b1 =
+1.
+b11 4
+b11 <
+b11 >
+1!
+b10000 ;
+1'
+#451360
+0'
+#455700
+b0 4
+b0 <
+b0 >
+0!
+0.
+b1 ;
+1'
+#460040
+0'
